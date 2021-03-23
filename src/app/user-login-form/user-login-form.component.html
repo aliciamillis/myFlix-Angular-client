@@ -1,0 +1,29 @@
+<mat-card class="login-card">
+  <!-- This container adds an "X" to the modal that allows the user to close it without having to click outside of it. -->
+  <div class="close-icon-container">
+    <button mat-icon-button class="close-icon" color="basic" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-card-header>
+    <mat-card-title class="login-title">Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password" required>
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="sign-in-button" mat-raised-button (click)="userLogin()" color="basic">
+      Sign In
+    </button>
+  </mat-card-actions>
+</mat-card>
