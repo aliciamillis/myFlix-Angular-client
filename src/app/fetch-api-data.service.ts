@@ -115,7 +115,7 @@ export class GetSingleMovieService {
 
   getSingleMovie(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/:title', {
+    return this.http.get(apiUrl + 'movies/title/:title', {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -154,7 +154,7 @@ export class GetDirectorService {
 
   getDirector(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/director/:name', {
+    return this.http.get(apiUrl + 'movies/directors/:director', {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -193,7 +193,7 @@ export class GetGenreService {
 
   getGenre(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/genres/:name', {
+    return this.http.get(apiUrl + 'movies/genres/:title', {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
