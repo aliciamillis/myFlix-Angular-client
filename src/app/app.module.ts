@@ -21,6 +21,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     UserProfileComponent,
     UpdateUserProfileComponent,
     GenreDialogComponent,
+    DirectorDialogComponent,
 
   ],
   imports: [
