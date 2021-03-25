@@ -229,9 +229,8 @@ export class GetGenreService {
 export class GetUserService {
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<any> {
+  getUser(username: string): Observable<any> {
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
     return this.http.get(`${apiUrl}users/${username}`, {
       headers: new HttpHeaders(
         {
