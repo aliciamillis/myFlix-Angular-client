@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 .background {
   background-image: #e3ecf0;
@@ -6,7 +7,7 @@
 }
 
 input {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 400px;
   height: 30px;
   background-color: #CFD8DC;
@@ -46,7 +47,7 @@ img {
 .mat-card {
   background-color: rgba(186, 194, 197, 0.4);
   box-shadow: 8px 8px 15px black;
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 20px;
   width: 310px;
 }
@@ -61,7 +62,8 @@ img {
 }
 
 button {
-  font-family: 'Satisfy', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
 .details {
@@ -72,7 +74,7 @@ button {
 
 .details-button {
   font-size: 14px;
-  border: .5px solid #37474F;
+  border: .5px solid #161718;
 }
 
 .directed-by {
@@ -82,9 +84,8 @@ button {
 }
 
 .director-button {
-  font-size: 11px;
-  float: right;
-  text-decoration: underline;
+  font-size: 14px;
+  border: .5px solid #161718;
 }
 
 .genre {
@@ -94,9 +95,8 @@ button {
 }
 
 .genre-button {
-  font-size: 11px;
-  float: right;
-  text-decoration: underline;
+  font-size: 14px;
+  border: .5px solid #161718;
 }
 
 .favorite {

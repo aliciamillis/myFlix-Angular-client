@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap");
+
+#navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #abbdc5;
+  
+}
+
+.app-title {
+  font-size: 22px;
+  margin-left: 30px;
+  color: #070707;
+  font-weight: bold;
+  font-family: 'Comfortaa', sans-serif;
+  letter-spacing: 2px;
+}
+
+button {
+  font-size: 17px;
+  font-family: 'Michroma', sans-serif;
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.nav-links {
+  margin-right: 35px;
+}
+
+@media only screen and (max-width: 464px) {
+  .nav-links {
+    margin-right: -5px;
+  }
+  .app-title {
+    margin-left: 0px;
+  }
+  button {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .nav-links{ 
+    margin-left: 140px;
+  }
+}

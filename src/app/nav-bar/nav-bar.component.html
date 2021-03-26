@@ -1,1 +1,18 @@
-<p>nav-bar works!</p>
+<!--
+  Main navigation for the app including links to return to the main view/all movies view, profile view, and a button to log out
+-->
+<div id="navbar">
+  <div class="nav-container">
+    <button mat-button color="primary" routerLink="/movies" class="app-title">
+      MyFlix
+    </button>
+    <div class="nav-links">
+      <button mat-button color="basic" routerLink="/profile" class="profile">
+        Profile
+      </button>
+      <button mat-button color="basic" class="logout" (click)="logoutUser()" routerLink="/">
+        Logout
+      </button>
+    </div>
+  </div>
+</div>

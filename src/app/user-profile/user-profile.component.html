@@ -1,39 +1,64 @@
-<!--The user-profile component displays all the user data. It also contains buttons to update their profile, delete their profile and a go-back-button-->
+<!--
+  This component displays profile information to the user.  Here they can view/edit profile information, view/remove favorite movies, and delete their account.
+-->
+<app-nav-bar></app-nav-bar>
 <div class="body">
-  <mat-card class="user-proflie">
-    <mat-card-header>
-      <mat-card-title> Your Profile </mat-card-title>
-    </mat-card-header>
-    <mat-card-content> Username: {{ user.Username }} </mat-card-content>
-    <mat-card-content> Password: ******** </mat-card-content>
-    <mat-card-content> Email: {{ user.Email }} </mat-card-content>
-    <mat-card-content>
-      Birthday: {{ user.Birthday | date: "MM/dd/yyyy":"UTC" }}
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="openUpdateProfileDialog()">
-        Update Profile Information
-      </button>
-      <button mat-raised-button color="warn" (click)="deleteProfile()">
-        Delete Profile
-      </button>
-    </mat-card-actions>
-    <mat-card-content>
-      <mat-card-title>Your Favorite Movies:</mat-card-title>
-    </mat-card-content>
+
+  <div class="user-profile">
+    <mat-card class="profile-info">
+      <mat-card-header>
+        <mat-card-title class="your-info">
+          Your Profile Info:
+        </mat-card-title>
+      </mat-card-header>
+      <hr>
+      <mat-card-content>
+        Username: {{ user.Username }}
+      </mat-card-content>
+      <mat-card-content>
+        Password: ********
+      </mat-card-content>
+      <mat-card-content>
+        Email: {{ user.Email }}
+      </mat-card-content>
+      <mat-card-content>
+        <!-- adding " : 'UTC' " solved the issue with the Angular date picker being off by one day -->
+        Birthday: {{ user.Birthday | date : 'MM/dd/yyyy' : 'UTC' }}
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="profile-buttons">
+          <button class="update-profile" mat-raised-button color="basic" (click)="openUpdateProfileDialog()">
+            Update Profile
+          </button>
+          <button class="delete-profile" mat-raised-button color="warn" (click)="deleteProfile()">
+            Delete Profile
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="favorites-container">
+    <!-- <mat-card-content> -->
+    <div class="title-container">
+      <mat-card-title class="title">Your Favorite Movies:</mat-card-title>
+    </div>
+    <!-- </mat-card-content> -->
     <div class="favorite-cards">
-      <mat-card *ngFor="let favorite of favorites">
-        <mat-card-header>
-          <mat-card-title>{{ favorite.Title }}</mat-card-title>
-          <!-- <mat-card-subtitle>Directed by: {{favorite.Director.Name}}</mat-card-subtitle> -->
-        </mat-card-header>
-        <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
-        <mat-card-actions>
-          <button mat-button color="primary" (click)="removeFromFavorites(favorite._id, favorite.Title)">
+      <mat-card class="favorite" *ngFor="let favorite of favorites;">
+        <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+        <div class="favorite-title">
+          <mat-card-title>{{favorite.Title}}</mat-card-title>
+        </div>
+        <div class="remove-favorite">
+          <!-- <mat-card-actions> -->
+          <button class="remove-button" mat-button color="basic"
+            (click)="removeFromFavorites(favorite._id, favorite.Title)">
             Remove From favorites
           </button>
-        </mat-card-actions>
+          <!-- </mat-card-actions> -->
+        </div>
       </mat-card>
     </div>
-  </mat-card>
+  </div>
 </div>
