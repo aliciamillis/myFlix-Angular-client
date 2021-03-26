@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+
+.background {
+  background-image: #e3ecf0;
+  background-attachment: fixed;
+}
+
+input {
+  font-family: 'Michroma', sans-serif;
+  width: 400px;
+  height: 30px;
+  background-color: #CFD8DC;
+  padding-left: 15px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 10px rgb(136, 133, 133);
+}
+
+input:focus {
+  outline: none !important;
+  border-color: black;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+img {
+  display: block;
+  width: 265px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.all-movies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mat-card {
+  background-color: rgba(186, 194, 197, 0.4);
+  box-shadow: 8px 8px 15px black;
+  font-family: 'Michroma', sans-serif;
+  margin: 20px;
+  width: 310px;
+}
+
+.movie-title {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 1px;
+  color: black;
+}
+
+button {
+  font-family: 'Satisfy', sans-serif;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-button {
+  font-size: 14px;
+  border: .5px solid #37474F;
+}
+
+.directed-by {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.director-button {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
+}
+
+.genre {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.genre-button {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
+}
+
+.favorite {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.favorite-button {
+  transform: scale(1.65);
+}
+
+.favorite-button:hover {
+  box-shadow: 1px 1px 1px red;
+}

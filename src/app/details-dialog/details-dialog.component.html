@@ -1,8 +1,14 @@
 <!--The details-dialog component displays details about a single movie (title, image, description, director and genre)-->
-<div class="movie-details">
-  <h1>{{ data.title }}</h1>
-  <img src={{data.image}} width="300px" />
-  <p>{{data.description}}</p>
-  <p><b>Directed by:</b> {{data.director}}</p>
-  <p><b>Genre:</b> {{data.genre}}</p>
-</div>
+<div class="director-dialog">
+  <div class="close-icon-container">
+    <button mat-icon-button class="close-icon" color="basic" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="movie-details">
+    <h1>{{ data.title }}</h1>
+    <img src={{data.image}} width="300px" />
+    <p>{{data.description}}</p>
+    <p><b>Directed by:</b> {{data.director}}</p>
+    <p><b>Genre:</b> {{data.genre}}</p>
+  </div>
