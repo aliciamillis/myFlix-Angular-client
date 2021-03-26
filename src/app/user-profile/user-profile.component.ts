@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateUserProfileComponent } from '../update-user-profile/update-user-profile.component';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -18,6 +19,7 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any = [];
   favourites: any = [];
+
   constructor(
     public fetchApiData: GetUserService,
     public fetchApiData2: GetAllMoviesService,
@@ -27,6 +29,10 @@ export class UserProfileComponent implements OnInit {
     public dialog: MatDialog,
     public router: Router
   ) { }
+
+  /**
+  * Runs the getUser() function on initialization
+  */
   ngOnInit(): void {
     this.getUser();
   }
@@ -40,17 +46,44 @@ export class UserProfileComponent implements OnInit {
       this.getMovies();
     });
   }
+
+  /**
+   * Returns a list of all movies from the database and calls the filterFavourites() function
+   */
   getMovies(): void {
     this.fetchApiData2.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      this.filterfavourites();
+      this.filterFavourites();
     });
   }
-  filterfavourites(): void {
+
+  /**
+   * Filters the list of all movies into an array that matches user favourites
+   * @returns {array}
+   */
+  filterFavourites(): void {
     this.favourites = this.movies.filter((movie: any) =>
       this.user.favouriteMovies.includes(movie._id)
     );
     return this.favourites;
+  }
+
+  /**
+  * Removes movie(s) from the users favorites list and refreshes the window automatically to show changes
+  * @param id 
+  * @param title 
+  */
+  removeFromFavorites(id: string, title: string): void {
+    this.fetchApiData3.deleteFavouriteMovie().subscribe(() => {
+      this.snackBar.open(
+        `${title} has been removed from your Favorites`, 'OK', {
+        duration: 2000,
+      }
+      );
+      setTimeout(function () {
+        window.location.reload();
+      }, 1000);
+    });
   }
 
 

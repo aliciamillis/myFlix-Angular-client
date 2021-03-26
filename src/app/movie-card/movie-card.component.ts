@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss']
 })
-export class MovieCardComponent {
+export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   constructor(
     public fetchApiData: GetAllMoviesService,
@@ -24,11 +24,16 @@ export class MovieCardComponent {
     public buttonModule: MatButtonModule
   ) { }
 
+  /**
+  * getMovies() function is run on initialization
+  */
   ngOnInit(): void {
     this.getMovies();
   }
 
-  //get list of movies 
+  /**
+   * Gets a list of all movies and stores them in an array
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -44,9 +49,9 @@ export class MovieCardComponent {
    * @param birth 
    * @param death 
    */
-  showDirectorDialog(director: string, bio: string, birth: Date, death: Date): void {
+  showDirectorDialog(director: string, bio: string, birth: Date): void {
     this.dialog.open(DirectorDialogComponent, {
-      data: { director, bio, birth, death },
+      data: { director, bio, birth },
       width: '350px',
     });
   }
