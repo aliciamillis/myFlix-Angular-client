@@ -57,7 +57,7 @@ hr {
   padding-top: 25px;
 }
 
-.favorite {
+.favourite {
   background-color: rgba(99, 168, 202, 0.4);
   box-shadow: 8px 8px 15px black;
   font-family: 'Montserrat', sans-serif;
@@ -65,7 +65,7 @@ hr {
   width: 225px;
 }
 
-.favorite-cards {
+.favourite-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -78,7 +78,7 @@ img {
   width: 200px;
 }
 
-.favorite-title {
+.favourite-title {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   -webkit-text-stroke: 1px black;
@@ -88,7 +88,7 @@ img {
   padding-bottom: 20px;
 }
 
-.remove-favorite {
+.remove-favourite {
   display: flex;
   justify-content: center;
   
@@ -117,7 +117,7 @@ button {
     margin-left: 12px;
     margin-right: 12px;
   }
-  .favorite-cards {
+  .favourite-cards {
     display: flex;
     justify-content: center;
   }

@@ -79,13 +79,13 @@ export class MovieCardComponent {
   }
 
   /**
-   * Adds the movie to the user's list of favorites.  The favorites list is stored in the database and is viewable on the user profile.
+   * Adds the movie to the user's list of favourites.  The favourites list is stored in the database and is viewable on the user profile.
    * @param id 
    * @param title 
    */
   addFavourite(id: string, title: string): void {
     this.fetchApiData2.addFavouriteMovie(id).subscribe(() => {
-      this.snackBar.open(`${title} has been added to your favorites!`, 'OK', {
+      this.snackBar.open(`${title} has been added to your favourites!`, 'OK', {
         duration: 2000,
       });
     });

@@ -1,5 +1,5 @@
 <!--
-  This component displays profile information to the user.  Here they can view/edit profile information, view/remove favorite movies, and delete their account.
+  This component displays profile information to the user.  Here they can view/edit profile information, view/remove favourite movies, and delete their account.
 -->
 <app-nav-bar></app-nav-bar>
 <div class="body">
@@ -36,29 +36,5 @@
         </div>
       </mat-card-actions>
     </mat-card>
-  </div>
-
-  <div class="favorites-container">
-    <!-- <mat-card-content> -->
-    <div class="title-container">
-      <mat-card-title class="title">Your Favorite Movies:</mat-card-title>
-    </div>
-    <!-- </mat-card-content> -->
-    <div class="favorite-cards">
-      <mat-card class="favorite" *ngFor="let favorite of favorites;">
-        <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
-        <div class="favorite-title">
-          <mat-card-title>{{favorite.Title}}</mat-card-title>
-        </div>
-        <div class="remove-favorite">
-          <!-- <mat-card-actions> -->
-          <button class="remove-button" mat-button color="basic"
-            (click)="removeFromFavorites(favorite._id, favorite.Title)">
-            Remove From favorites
-          </button>
-          <!-- </mat-card-actions> -->
-        </div>
-      </mat-card>
-    </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   GetUserService,
   GetAllMoviesService,
-  //DeleteFavoriteMovieService,
+  DeleteFavouriteMovieService,
   DeleteUserService
 } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -17,11 +17,11 @@ import { Router } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any = [];
-  favorites: any = [];
+  favourites: any = [];
   constructor(
     public fetchApiData: GetUserService,
     public fetchApiData2: GetAllMoviesService,
-    // public fetchApiData3: DeleteFavoriteMovieService,
+    public fetchApiData3: DeleteFavouriteMovieService,
     public fetchApiData4: DeleteUserService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
@@ -43,15 +43,16 @@ export class UserProfileComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData2.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      this.filterFavorites();
+      this.filterfavourites();
     });
   }
-  filterFavorites(): void {
-    this.favorites = this.movies.filter((movie: any) =>
-      this.user.FavoriteMovies.includes(movie._id)
+  filterfavourites(): void {
+    this.favourites = this.movies.filter((movie: any) =>
+      this.user.favouriteMovies.includes(movie._id)
     );
-    return this.favorites;
+    return this.favourites;
   }
+
 
   /**
    * Opens the dialog to update a user's profile
