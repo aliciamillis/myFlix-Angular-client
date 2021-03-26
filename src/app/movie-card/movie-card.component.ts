@@ -39,14 +39,14 @@ export class MovieCardComponent {
 
   /**
    * Opens a dialog box with a description of the movie's director
-   * @param name 
+   * @param director
    * @param bio 
    * @param birth 
    * @param death 
    */
-  showDirectorDialog(name: string, bio: string, birth: Date, death: Date): void {
+  showDirectorDialog(director: string, bio: string, birth: Date, death: Date): void {
     this.dialog.open(DirectorDialogComponent, {
-      data: { name, bio, birth, death },
+      data: { director, bio, birth, death },
       width: '350px',
     });
   }
