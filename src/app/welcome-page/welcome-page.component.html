@@ -1,14 +1,20 @@
-<div class="main-page">
-  <h1>
-    Welcome to myFlix!
-  </h1>
-  <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 10px;" color="orange">
-    Sign Up
-  </button>
-  <button mat-raised-button (click)="openUserLoginDialog()" style="margin-right: 10px;" color="orange">
-    Login
-  </button>
-  <!-- <button mat-raised-button (click)="openMoviesDialog()" color="orange">
-    All Movies
-  </button> -->
-</div>
+<!--
+  This component is the welcome page that is loaded initially where users can either log in or create an account
+-->
+
+<body>
+  <div class="main-page">
+    <h1>
+      Welcome to MyFlix!
+    </h1>
+    <div class="welcome-buttons">
+      <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 20px;" color="basic">
+        Sign Up
+      </button>
+
+      <button mat-raised-button (click)="openUserLoginDialog()" color="basic">
+        Login
+      </button>
+    </div>
+  </div>
+</body>

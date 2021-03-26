@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 .signup-title {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin-left: 50px;
   margin-bottom: 10px;
-  text-decoration: underline;
+  
 }
 
 .signup-card {
@@ -26,7 +27,7 @@ input {
 }
 
 .register-button {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 5px;
   border: 1px solid black;
 }

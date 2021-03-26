@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   GetUserService,
   GetAllMoviesService,
-  DeletefavoriteMovieService,
+  // DeletefavoriteMovieService,
   DeleteUserService
 } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -23,7 +23,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     public fetchApiData: GetUserService,
     public fetchApiData2: GetAllMoviesService,
-    public fetchApiData3: DeletefavoriteMovieService,
+    // public fetchApiData3: DeletefavoriteMovieService,
     public fetchApiData4: DeleteUserService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
@@ -73,18 +73,18 @@ export class UserProfileComponent implements OnInit {
   * @param id 
   * @param title 
   */
-  removeFromFavorites(id: string, title: string): void {
-    this.fetchApiData3.deletefavoriteMovie().subscribe(() => {
-      this.snackBar.open(
-        `${title} has been removed from your Favorites`, 'OK', {
-        duration: 2000,
-      }
-      );
-      setTimeout(function () {
-        window.location.reload();
-      }, 1000);
-    });
-  }
+  // removeFromFavorites(id: string, title: string): void {
+  //   this.fetchApiData3.deletefavoriteMovie().subscribe(() => {
+  //     this.snackBar.open(
+  //       `${title} has been removed from your Favorites`, 'OK', {
+  //       duration: 2000,
+  //     }
+  //     );
+  //     setTimeout(function () {
+  //       window.location.reload();
+  //     }, 1000);
+  //   });
+  // }
 
 
   /**

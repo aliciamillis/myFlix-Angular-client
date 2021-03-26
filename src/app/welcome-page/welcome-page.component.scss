@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  background-color: #CFD8DC;
+}
+
+.welcome-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  font-family: 'Comfortaa:', sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+button {
+  font-family: 'Comfortaa:', sans-serif;
+  margin-top: 5px;
+  border: 1px solid black;
+  -webkit-text-stroke: 0.5px black;
+  width: 100px;
+}
