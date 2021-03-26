@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllMoviesService, AddFavouriteMovieService, DeleteFavouriteMovieService } from '../fetch-api-data.service';
+import { GetAllMoviesService, AddfavoriteMovieService, DeletefavoriteMovieService } from '../fetch-api-data.service';
 import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
@@ -17,8 +17,8 @@ export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   constructor(
     public fetchApiData: GetAllMoviesService,
-    public fetchApiData2: AddFavouriteMovieService,
-    public fetchApiData3: DeleteFavouriteMovieService,
+    public fetchApiData2: AddfavoriteMovieService,
+    public fetchApiData3: DeletefavoriteMovieService,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     public buttonModule: MatButtonModule
@@ -84,13 +84,13 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Adds the movie to the user's list of favourites.  The favourites list is stored in the database and is viewable on the user profile.
+   * Adds the movie to the user's list of favorites.  The favorites list is stored in the database and is viewable on the user profile.
    * @param id 
    * @param title 
    */
-  addFavourite(id: string, title: string): void {
-    this.fetchApiData2.addFavouriteMovie(id).subscribe(() => {
-      this.snackBar.open(`${title} has been added to your favourites!`, 'OK', {
+  addfavorite(id: string, title: string): void {
+    this.fetchApiData2.addfavoriteMovie(id).subscribe(() => {
+      this.snackBar.open(`${title} has been added to your favorites!`, 'OK', {
         duration: 2000,
       });
     });

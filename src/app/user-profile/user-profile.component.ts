@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   GetUserService,
   GetAllMoviesService,
-  DeleteFavouriteMovieService,
+  DeletefavoriteMovieService,
   DeleteUserService
 } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -18,12 +18,12 @@ import { Router } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any = [];
-  favourites: any = [];
+  favorites: any = [];
 
   constructor(
     public fetchApiData: GetUserService,
     public fetchApiData2: GetAllMoviesService,
-    public fetchApiData3: DeleteFavouriteMovieService,
+    public fetchApiData3: DeletefavoriteMovieService,
     public fetchApiData4: DeleteUserService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
@@ -48,24 +48,24 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Returns a list of all movies from the database and calls the filterFavourites() function
+   * Returns a list of all movies from the database and calls the filterfavorites() function
    */
   getMovies(): void {
     this.fetchApiData2.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      this.filterFavourites();
+      this.filterfavorites();
     });
   }
 
   /**
-   * Filters the list of all movies into an array that matches user favourites
+   * Filters the list of all movies into an array that matches user favorites
    * @returns {array}
    */
-  filterFavourites(): void {
-    this.favourites = this.movies.filter((movie: any) =>
-      this.user.favouriteMovies.includes(movie._id)
+  filterfavorites(): void {
+    this.favorites = this.movies.filter((movie: any) =>
+      this.user.favoriteMovies.includes(movie._id)
     );
-    return this.favourites;
+    return this.favorites;
   }
 
   /**
@@ -74,7 +74,7 @@ export class UserProfileComponent implements OnInit {
   * @param title 
   */
   removeFromFavorites(id: string, title: string): void {
-    this.fetchApiData3.deleteFavouriteMovie().subscribe(() => {
+    this.fetchApiData3.deletefavoriteMovie().subscribe(() => {
       this.snackBar.open(
         `${title} has been removed from your Favorites`, 'OK', {
         duration: 2000,

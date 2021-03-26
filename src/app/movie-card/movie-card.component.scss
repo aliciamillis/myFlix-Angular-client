@@ -93,16 +93,16 @@ button {
   border: .5px solid #161718;
 }
 
-.favourite {
+.favorite {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
 
-.favourite-button {
+.favorite-button {
   transform: scale(1.65);
 }
 
-.favourite-button:hover {
+.favorite-button:hover {
   box-shadow: 1px 1px 1px red;
 }

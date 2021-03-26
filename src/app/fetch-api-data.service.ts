@@ -265,10 +265,10 @@ export class GetUserService {
   providedIn: 'root'
 })
 
-export class GetFavouriteMoviesService {
+export class GetfavoriteMoviesService {
   constructor(private http: HttpClient) { }
 
-  getFavouriteMovies(): Observable<any> {
+  getfavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'users/:username/movies/:movieID', {
       headers: new HttpHeaders(
@@ -304,10 +304,10 @@ export class GetFavouriteMoviesService {
   providedIn: 'root'
 })
 
-export class AddFavouriteMovieService {
+export class AddfavoriteMovieService {
   constructor(private http: HttpClient) { }
 
-  addFavouriteMovie(id: string): Observable<any> {
+  addfavoriteMovie(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http.post(`${apiUrl}users/${username}/Movies/${id}`, id, {
@@ -425,10 +425,10 @@ export class DeleteUserService {
   providedIn: 'root'
 })
 
-export class DeleteFavouriteMovieService {
+export class DeletefavoriteMovieService {
   constructor(private http: HttpClient) { }
 
-  deleteFavouriteMovie(): Observable<any> {
+  deletefavoriteMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.delete(apiUrl + 'users/:Username/Movies/:MovieID', {
       headers: new HttpHeaders(

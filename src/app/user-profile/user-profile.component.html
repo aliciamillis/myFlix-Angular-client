@@ -1,5 +1,5 @@
 <!--
-  This component displays profile information to the user.  Here they can view/edit profile information, view/remove favourite movies, and delete their account.
+  This component displays profile information to the user.  Here they can view/edit profile information, view/remove favorite movies, and delete their account.
 -->
 <app-nav-bar></app-nav-bar>
 <div class="body">
@@ -38,23 +38,23 @@
     </mat-card>
   </div>
 
-  <div class="favourites-container">
+  <div class="favorites-container">
     <!-- <mat-card-content> -->
     <div class="title-container">
-      <mat-card-title class="title">Your Favourite Movies:</mat-card-title>
+      <mat-card-title class="title">Your favorite Movies:</mat-card-title>
     </div>
     <!-- </mat-card-content> -->
-    <div class="favourite-cards">
-      <mat-card class="favourite" *ngFor="let favourite of favourites;">
-        <img src={{favourite.ImagePath}} alt={{favourite.Title}} />
-        <div class="favourite-title">
-          <mat-card-title>{{favourite.Title}}</mat-card-title>
+    <div class="favorite-cards">
+      <mat-card class="favorite">
+        <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+        <div class="favorite-title">
+          <mat-card-title>{{favorite.Title}}</mat-card-title>
         </div>
-        <div class="remove-favourite">
+        <div class="remove-favorite">
           <!-- <mat-card-actions> -->
           <button class="remove-button" mat-button color="basic"
-            (click)="removeFromFavorites(favourite._id, favourite.Title)">
-            Remove From favourites
+            (click)="removeFromFavorites(favorite._id, favorite.Title)">
+            Remove From favorites
           </button>
           <!-- </mat-card-actions> -->
         </div>
