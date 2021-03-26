@@ -1,21 +1,54 @@
-<div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+<!--
+  This component is the main view after login.  It shows all movies returned by the API call.  Users can perform multiple actions on each movie card including viewing modals of individual movie details, director details, and genre details.  Users can also add individual movies to their favorites.
+-->
+
+<div class="all-movies">
+  <!-- 
+    *ngFor directive is used to display all returned movies and display them on their own card. The customfilter is used with the search pipe and search field above 
+  -->
+  <mat-card *ngFor="let movie of movies | customfilter:filterTerm:'Title'">
     <mat-card-header>
-      <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+      <div class="movie-title">
+        <mat-card-title>{{movie.Title}}</mat-card-title>
+      </div>
     </mat-card-header>
-    <img src={{movie.ImagePath}} alt={{movie.Title}} />
+
+    <img mat-card-image src={{movie.ImagePath}} alt={{movie.Title}} />
+
     <mat-card-actions>
-      <button mat-button color="primary">
-        Genre
-      </button>
-      <button mat-button color="primary">
-        Director
-      </button>
-      <button mat-button color="primary">
-        Synopsis
-      </button>
-      <mat-icon>favorite_border</mat-icon>
+      <div class="details">
+        <button class="details-button" mat-stroked-button color="basic"
+          (click)="showDetailsDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director, movie.Genre.Name)">
+          Details
+        </button>
+        <br />
+        <br />
+      </div>
+      <div class="directed-by">
+        Directed by:
+        <button class="director-button" mat-button color="basic"
+          (click)="showDirectorDialog(movie.Director, movie.Bio, movie.Birth, movie.Death)">
+          {{movie.Director}}
+        </button>
+      </div>
+
+      <div class="genre">
+        Genre:
+        <button class="genre-button" mat-button color="basic"
+          (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)">
+          {{movie.Genre.Name}}
+        </button>
+      </div>
+
+      <div class="favorite">
+        <button class="favorite-button" mat-icon-button (click)="addFavorite(movie._id, movie.Title)" color="warn"
+          aria-label="Add movie to favorites button">
+          <mat-icon>
+            favorite_border
+          </mat-icon>
+        </button>
+      </div>
     </mat-card-actions>
   </mat-card>
+</div>
 </div>

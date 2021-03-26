@@ -15,7 +15,7 @@ export class DirectorDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      name: string;
+      director: string;
       bio: string;
       birth: Date;
       death: Date;
