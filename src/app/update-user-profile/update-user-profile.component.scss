@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+.update-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.mat-dialog-container {
+  background-color: #415a66;
+  border: 1px solid black;
+}
+
+.update-card {
+  background-color: #cfd8dc;
+  border: 1px solid black;
+}
+
+.update-button {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5px;
+  border: 1px solid black;
+}
+
+.close-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: absolute;
+  top: -5px;
+  right: 28px;
+}
+
+.close-icon {
+  width: 0;
+}

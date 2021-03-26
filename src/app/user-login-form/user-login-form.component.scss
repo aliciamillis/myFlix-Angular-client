@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 .login-title {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin-left: 50px;
   margin-bottom: 10px;
@@ -17,8 +18,8 @@
   margin-top: 8px;
 }
 
-::ng-deep.mat-dialog-container {
-  background-color: #B0BEC5;
+.mat-dialog-container {
+  background-color: #415a66;
 }
 
 input {
@@ -26,7 +27,7 @@ input {
 }
 
 .sign-in-button {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 5px;
   border: 1px solid black;
 }

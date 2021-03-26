@@ -1,1 +1,36 @@
-<p>update-user-profile works!</p>
+<!--
+  This component allows users to edit their profile information
+-->
+<mat-card class="update-card">
+  <div class="close-icon-container">
+    <button mat-icon-button class="close-icon" color="basic" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-card-header>
+    <mat-card-title class="update-title">Update Profile</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Password" placeholder="Password" type="password" name="Password" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Email" placeholder="Email" type="email" name="Email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" type="date" name="Birthday">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button class="update-button" mat-raised-button (click)="editUser()" color="basic">
+      Update
+    </button>
+  </mat-card-actions>
+</mat-card>
