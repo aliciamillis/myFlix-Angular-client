@@ -45,9 +45,9 @@ export class MovieCardComponent implements OnInit {
   /**
    * Opens a dialog box with a description of the movie's director
    * @param director
-   * @param bio 
-   * @param birth 
-   * @param death 
+   * @param bio
+   * @param birth
+   * @param death
    */
   showDirectorDialog(director: string, bio: string, birth: Date): void {
     this.dialog.open(DirectorDialogComponent, {
@@ -58,8 +58,8 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Opens a dialog box with a description of the movie's genre
-   * @param name 
-   * @param description 
+   * @param name
+   * @param description
    */
   showGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreDialogComponent, {
@@ -70,11 +70,11 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Opens a dialog box with all available details of the movie
-   * @param title 
-   * @param imagepath 
-   * @param description 
-   * @param director 
-   * @param genre 
+   * @param title
+   * @param imagepath
+   * @param description
+   * @param director
+   * @param genre
    */
   showDetailsDialog(title: string, imagepath: string, description: string, director: string, genre: string): void {
     this.dialog.open(DetailsDialogComponent, {
@@ -85,14 +85,16 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Adds the movie to the user's list of favorites.  The favorites list is stored in the database and is viewable on the user profile.
-   * @param id 
-   * @param title 
+   * @param id
+   * @param title
    */
   addfavorite(id: string, title: string): void {
+    console.log(id)
     this.fetchApiData2.addfavoriteMovie(id).subscribe(() => {
       this.snackBar.open(`${title} has been added to your favorites!`, 'OK', {
         duration: 2000,
       });
+
     });
   }
 }

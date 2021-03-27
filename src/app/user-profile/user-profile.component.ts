@@ -43,6 +43,7 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getUser(localStorage.getItem('user')).subscribe((resp: any) => {
       this.user = resp;
+      console.log(resp);
       this.getMovies();
     });
   }
@@ -59,19 +60,28 @@ export class UserProfileComponent implements OnInit {
 
   /**
    * Filters the list of all movies into an array that matches user favorites
-   * @returns {array}
+   * @ returns { array }
    */
   filterfavorites(): void {
-    this.favorites = this.movies.filter((movie: any) =>
-      this.user.favoriteMovies.includes(movie._id)
-    );
+    this.favorites = []; // set default empty array
+    if (this.user.FavoriteMovies) {
+      // this.movies.forEach((movie: any) => {
+      //   if (this.user.FavoriteMovies.includes(movie._id)){
+      //     this.favorites.push(movie);
+      //     }
+      //   }
+      // );
+
+      this.favorites = this.movies.filter((movie: any) => this.user.FavoriteMovies.includes(movie._id));
+    }
+
     return this.favorites;
   }
 
   /**
   * Removes movie(s) from the users favorites list and refreshes the window automatically to show changes
-  * @param id 
-  * @param title 
+  * @param id
+  * @param title
   */
   // removeFromFavorites(id: string, title: string): void {
   //   this.fetchApiData3.deletefavoriteMovie().subscribe(() => {
