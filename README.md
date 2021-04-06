@@ -1,3 +1,8 @@
+Full Case Study Here 
+
+https://www.canva.com/design/DAEa5zxcpzw/nJfTjes-m3rMJyg1Ial1ig/view?utm_content=DAEa5zxcpzw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
